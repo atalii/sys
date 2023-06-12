@@ -36,10 +36,31 @@
         "type": "github"
       }
     },
+    "painted": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1686541733,
+        "narHash": "sha256-aACpCIrTLGW7X0vxigpBriGklXen/VZJE358Kavyk6g=",
+        "owner": "atalii",
+        "repo": "painted",
+        "rev": "6a93749c56aed0e73f4dbd6c3c443e72e8fc8a3a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "atalii",
+        "repo": "painted",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "painted": "painted"
       }
     }
   },

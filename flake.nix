@@ -6,12 +6,21 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager }:
+  inputs.painted = {
+    url = "github:atalii/painted";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
+  outputs = { self, nixpkgs, home-manager, painted }:
     let
       sys = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
       	  ./configuration.nix
+
+	  ({ config, ... }: {
+	    environment.systemPackages = [ painted.defaultPackage.x86_64-linux ];
+	  })
 
 	  home-manager.nixosModules.home-manager
 	    {
