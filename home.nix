@@ -63,20 +63,14 @@ in {
     color15  #ECEFF4
   '';
 
-  xdg.configFile."i3status/config".text = ''
-    general {
-        output_format = "i3bar"
-	colors = false
-	separator = " "
+  xdg.configFile."i3blocks/config".text = ''
+    [notifs]
+    command=painted
+    interval=persist
 
-	interval = 5
-    }
-
-    order += "tztime_local"
-
-    tztime local {
-        format = "%H:%m, %d %B %Y"
-    }
+    [time]
+    command=date +"%H:%M, %d %B %Y"
+    interval=10
   '';
 
   xdg.configFile."i3/config".text = ''
@@ -141,7 +135,7 @@ in {
     font pango:Hack 12
 
     bar {
-        status_command i3status
+        status_command ${pkgs.i3blocks}/bin/i3blocks
 
         padding 2px 16px 0
 	position top
