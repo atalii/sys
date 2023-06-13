@@ -68,6 +68,10 @@ in {
     command=painted
     interval=persist
 
+    btn_left_cmd=clear
+    btn_right_cmd=right
+    btn_middle_cmd=nya
+
     [time]
     command=date +"%H:%M, %d %B %Y"
     interval=10
@@ -135,7 +139,16 @@ in {
     font pango:Hack 12
 
     bar {
-        status_command ${pkgs.i3blocks}/bin/i3blocks
+        status_command ${
+	  pkgs.i3blocks.overrideAttrs (old: {
+            src = pkgs.fetchFromGitHub {
+	      owner = "atalii";
+	      repo = "i3blocks";
+	      rev = "mouse-aliases";
+	      hash = "sha256-VezpAVDAoeJBqdWTGZXvqFhwfxl6q/zvwgsx2hy6/n4=";
+	    };
+	  })
+	}/bin/i3blocks
 
         padding 2px 16px 0
 	position top
