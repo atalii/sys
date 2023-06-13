@@ -69,8 +69,7 @@ in {
     interval=persist
 
     btn_left_cmd=clear
-    btn_right_cmd=right
-    btn_middle_cmd=nya
+    btn_right_cmd=expand
 
     [time]
     command=date +"%H:%M, %d %B %Y"
