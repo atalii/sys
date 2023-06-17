@@ -15,7 +15,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "kropotkin";
-  networking.nameservers = [ "9.9.9.9" "149.112.112.112" "1.1.1.1" "1.0.0.1" ];
+  networking.nameservers = [ "10.13.12.2" "9.9.9.9" "149.112.112.112" "1.1.1.1" "1.0.0.1" ];
   networking.wireless.enable = true;
 
   networking.wireless.networks."MaximumWarp-5G".psk = "Picard@123";
