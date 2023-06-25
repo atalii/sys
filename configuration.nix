@@ -43,8 +43,12 @@
   services.openssh.enable = true;
   services.tailscale.enable = true;
 
-  services.postgresql.enable = true;
   virtualisation.docker.enable = true;
+
+  services.postgresql.enable = true;
+  services.postgresql.authentication = ''
+    host all atalii 0.0.0.0/0 trust
+  '';
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
@@ -60,7 +64,7 @@
 
   environment.systemPackages = with pkgs; [
     xz tailscale
-    nvi neovim cmus neofetch kitty mksh xclip
+    nvi neovim cmus neofetch kitty mksh xclip tree
 
     git pulsemixer
 
