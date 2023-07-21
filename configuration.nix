@@ -62,11 +62,18 @@
     shell = pkgs.mksh;
   };
 
+  environment.variables.EDITOR = "vi";
+  environment.variables.CC = "distcc gcc";
+  environment.variables.CXX = "distcc g++";
+  environment.variables.DISTCC_HOSTS = "localhost/7 distcc.atalii.intranet/24";
+
+  environment.shellAliases."b" = "make -j39";
+
   environment.systemPackages = with pkgs; [
     xz tailscale
     nvi neovim cmus neofetch kitty mksh xclip tree
 
-    git pulsemixer
+    distcc git pulsemixer
 
     firefox thunderbird
 
