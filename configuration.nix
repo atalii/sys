@@ -70,14 +70,13 @@
   environment.shellAliases."b" = "make -j39";
 
   environment.systemPackages = with pkgs; [
-    xz tailscale
-    nvi neovim cmus neofetch kitty mksh xclip tree
-
-    distcc git pulsemixer
-
-    firefox thunderbird
-
-    discord
+    man-pages distcc gcc gnumake git
+    nvi neovim mksh tree xz
+    tailscale
+    cmus pulsemixer
+    neofetch kitty
+    xclip kitty
+    firefox thunderbird discord
   ];
 
   networking.firewall.enable = false;
