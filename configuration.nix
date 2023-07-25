@@ -48,6 +48,8 @@
     host all atalii 0.0.0.0/0 trust
   '';
 
+  programs.dconf.enable = true;
+
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
