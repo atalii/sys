@@ -70,7 +70,7 @@
   environment.shellAliases."b" = "make -j39";
 
   environment.systemPackages = with pkgs; [
-    man-pages distcc gcc gnumake git
+    cachix man-pages distcc gcc gnumake git
     nvi neovim mksh tree xz
     tailscale
     cmus pulsemixer

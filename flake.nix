@@ -18,6 +18,7 @@
         modules = [
       	  ./configuration.nix
 	  ./hardware-configuration.nix
+	  ./cachix.nix
 
 	  ({ config, ... }: {
 	    environment.systemPackages = [ painted.defaultPackage.x86_64-linux ];
