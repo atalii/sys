@@ -71,7 +71,7 @@
 
   environment.systemPackages = with pkgs; [
     cachix man-pages distcc gcc gnumake git
-    nvi neovim mksh tree xz
+    nvi mksh tree xz
     tailscale
     cmus pulsemixer
     neofetch kitty

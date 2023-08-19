@@ -166,4 +166,11 @@ in {
 	}
     }
   '';
+
+  programs.neovim.enable = true;
+  programs.neovim.extraConfig = ''
+    autocmd FileType adb,ads setlocal shiftwidth=3
+    autocmd FileType adb,ads setlocal softtabstop=3
+    autocmd FileType adb,ads setlocal expandtab
+  '';
 }
