@@ -13,6 +13,8 @@ in {
     ${pkgs.hsetroot}/bin/hsetroot -solid '${backgroundColor}'
     discord & thunderbird &
     i3bar &
+    xrandr --output HDMI-0 --auto --rotate right
+    xrandr --output DP-0 --auto --right-of HDMI-0
     exec ${pkgs.i3}/bin/i3
   '';
 
@@ -85,6 +87,13 @@ in {
     set $ws_d "IV"
     set $ws_e "V"
     set $ws_f "VI"
+
+    workspace $ws_a output HDMI-0
+    workspace $ws_b output DP-0
+    workspace $ws_c output DP-0
+    workspace $ws_d output DP-0
+    workspace $ws_e output DP-0
+    workspace $ws_f output DP-0
 
     floating_modifier $mod
 

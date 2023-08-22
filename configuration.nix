@@ -77,6 +77,8 @@
     neofetch kitty
     xclip kitty
     firefox thunderbird discord
+
+    wine wineWowPackages.full winePackages.full
   ];
 
   networking.firewall.enable = false;
