@@ -31,7 +31,7 @@
   services.xserver = {
     enable = true;
     layout = "us";
-    videoDrivers = [ "nivida" ];
+    videoDrivers = [ "nvidia" ];
 
     windowManager.i3.enable = true;
     displayManager.startx.enable = true;
