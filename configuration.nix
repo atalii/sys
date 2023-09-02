@@ -35,6 +35,8 @@
 
     windowManager.i3.enable = true;
     displayManager.startx.enable = true;
+
+    wacom.enable = true;
   };
 
   services.printing.enable = true;
