@@ -10,6 +10,7 @@ in {
   home.stateVersion = "23.05";
 
   home.file.".xinitrc".text = ''
+    xrandr --dpi 90
     ${pkgs.hsetroot}/bin/hsetroot -solid '${backgroundColor}'
     discord & thunderbird &
     i3bar &
