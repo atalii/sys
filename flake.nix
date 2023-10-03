@@ -1,5 +1,6 @@
 {
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+  inputs.nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
   inputs.home-manager = {
     url = "github:nix-community/home-manager/release-23.05";
@@ -11,8 +12,9 @@
     inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, painted }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, painted }:
     let
+      unstable = import nixpkgs-unstable { system = "x86_64-linux"; };
       sys = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -21,7 +23,10 @@
 	  ./cachix.nix
 
 	  ({ config, ... }: {
-	    environment.systemPackages = [ painted.defaultPackage.x86_64-linux ];
+	    environment.systemPackages = [
+	      painted.defaultPackage.x86_64-linux
+	      unstable.alire
+	    ];
 	  })
 
 	  home-manager.nixosModules.home-manager
