@@ -64,6 +64,10 @@
     shell = pkgs.mksh;
   };
 
+  environment.etc."adage.conf".text = ''
+    permit g!wheel as root: nopass
+  '';
+
   environment.variables.EDITOR = "vi";
   environment.variables.CC = "distcc gcc";
   environment.variables.CXX = "distcc g++";
@@ -78,9 +82,9 @@
     cmus pulsemixer
     neofetch kitty
     xclip kitty
-    firefox thunderbird discord
-
-    wine wineWowPackages.full winePackages.full
+    firefox thunderbird discord apostrophe
+ 
+    lutris wineWowPackages.full winetricks
   ];
 
   networking.firewall.enable = false;
