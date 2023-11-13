@@ -82,7 +82,8 @@
     cmus pulsemixer
     neofetch kitty
     xclip kitty
-    firefox thunderbird discord apostrophe
+    firefox thunderbird discord
+    pandoc texlive.combined.scheme-medium apostrophe
  
     lutris wineWowPackages.full winetricks
   ];
