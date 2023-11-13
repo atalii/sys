@@ -66,6 +66,9 @@
     shell = pkgs.mksh;
   };
 
+  qt.platformTheme = "gnome";
+  qt.style = "adwaita";
+
   environment.etc."adage.conf".text = ''
     permit g!wheel as root: nopass
   '';
@@ -82,7 +85,7 @@
     nvi mksh tree xz
     tailscale
     cmus pulsemixer
-    neofetch kitty vscodium
+    neofetch kitty kate konsole
     xclip kitty
     firefox thunderbird discord
     pandoc texlive.combined.scheme-medium apostrophe
