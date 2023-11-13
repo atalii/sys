@@ -14,7 +14,7 @@
 
   networking.hostName = "kropotkin";
   networking.nameservers = [ "10.13.12.2" "9.9.9.9" "149.112.112.112" "1.1.1.1" "1.0.0.1" ];
-  networking.wireless.enable = true;
+  networking.networkmanager.enable = true;
 
   networking.wireless.networks."MaximumWarp-5G".psk = "Picard@123";
 
@@ -26,18 +26,20 @@
     useXkbConfig = true;
   };
 
-  fonts.fonts = with pkgs; [ hack-font ];
+  fonts.fonts = with pkgs; [ hack-font fira-code ];
 
   services.xserver = {
     enable = true;
     layout = "us";
     videoDrivers = [ "nvidia" ];
 
-    windowManager.i3.enable = true;
-    displayManager.startx.enable = true;
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
 
     wacom.enable = true;
   };
+
+  programs.xwayland.enable = true;
 
   services.printing.enable = true;
   services.openssh.enable = true;
@@ -80,10 +82,11 @@
     nvi mksh tree xz
     tailscale
     cmus pulsemixer
-    neofetch kitty
+    neofetch kitty vscodium
     xclip kitty
     firefox thunderbird discord
     pandoc texlive.combined.scheme-medium apostrophe
+    deja-dup
  
     lutris wineWowPackages.full winetricks
   ];
