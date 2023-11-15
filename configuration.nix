@@ -73,16 +73,21 @@
     permit g!wheel as root: nopass
   '';
 
-  environment.variables.EDITOR = "vi";
-  environment.variables.CC = "distcc gcc";
-  environment.variables.CXX = "distcc g++";
-  environment.variables.DISTCC_HOSTS = "localhost/7 distcc.atalii.intranet/24";
+  environment.variables = {
+    EDITOR = "vi";
+    CC = "distcc gcc";
+    CXX = "distcc g++";
+    DISTCC_HOSTS = "localhost/7 distcc.atalii.intranet/24";
+
+    WEBKIT_DISABLE_COMPOSITING_MODE = "1";
+    # apostrophe needs this to show previews.
+  };
 
   environment.shellAliases."b" = "make -j39";
 
   environment.systemPackages = with pkgs; [
     cachix man-pages distcc gcc gnumake git clang-tools gnat gprbuild
-    nvi mksh tree xz
+    nvi mksh tree xz tmux
     tailscale
     cmus pulsemixer
     neofetch kitty kate konsole
