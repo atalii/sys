@@ -92,7 +92,7 @@
     cmus pulsemixer
     neofetch kitty kate konsole
     xclip kitty
-    firefox thunderbird discord
+    firefox thunderbird discord audacity
     pandoc texlive.combined.scheme-medium apostrophe
     deja-dup
  
