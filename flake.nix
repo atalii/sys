@@ -22,10 +22,12 @@
 	  ./hardware-configuration.nix
 	  ./cachix.nix
 
-	  ({ config, ... }: {
+	  ({ config, pkgs, ... }: {
 	    environment.systemPackages = [
 	      painted.defaultPackage.x86_64-linux
 	      unstable.alire
+
+	      (import ./pkgs/gnatprove.nix { inherit pkgs; })
 	    ];
 	  })
 
