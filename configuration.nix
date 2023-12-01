@@ -26,8 +26,6 @@
     useXkbConfig = true;
   };
 
-  fonts.fonts = with pkgs; [ hack-font fira-code ];
-
   services.openssh.enable = true;
   services.tailscale.enable = true;
 
