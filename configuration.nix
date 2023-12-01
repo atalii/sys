@@ -28,29 +28,10 @@
 
   fonts.fonts = with pkgs; [ hack-font fira-code ];
 
-  services.xserver = {
-    enable = true;
-    layout = "us";
-    videoDrivers = [ "nvidia" ];
-
-    desktopManager.gnome.enable = true;
-    displayManager.gdm.enable = true;
-
-    wacom.enable = true;
-  };
-
-  programs.xwayland.enable = true;
-
-  services.printing.enable = true;
   services.openssh.enable = true;
   services.tailscale.enable = true;
 
   virtualisation.docker.enable = true;
-
-  services.postgresql.enable = true;
-  services.postgresql.authentication = ''
-    host all atalii 0.0.0.0/0 trust
-  '';
 
   programs.dconf.enable = true;
 
